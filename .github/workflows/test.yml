@@ -8,6 +8,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL : "postgres://localhost:5321" # dummy URL to generate client
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
