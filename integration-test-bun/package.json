@@ -1,0 +1,29 @@
+{
+  "name": "testing-with-bun",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "vitest",
+    "test:integration": "./scripts/run-integration.sh"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.5",
+    "@types/pg": "^8.15.6",
+    "express": "^5.1.0",
+    "prisma": "^7.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.0.0",
+    "@prisma/client": "^7.0.0",
+    "@types/supertest": "^6.0.3",
+    "dotenv": "^17.2.3",
+    "pg": "^8.16.3",
+    "supertest": "^7.1.4",
+    "vitest": "^4.0.12"
+  }
+}

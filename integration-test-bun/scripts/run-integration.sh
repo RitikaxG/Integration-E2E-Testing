@@ -1,0 +1,12 @@
+set -a          # export all sourced variables
+source .env     # load .env into the shell
+set +a          # stop exporting
+
+docker compose up -d
+echo '🟡 - Waiting for database to be ready...'
+./scripts/wait-for-it.sh "postgresql://postgres:mysecretpassword@localhost:5432/postgres" -- echo '🟢 - Database is ready!'
+npx prisma migrate dev --name init
+
+bun run test
+
+docker compose down
